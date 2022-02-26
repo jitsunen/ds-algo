@@ -5,6 +5,7 @@
 const assert = require('chai').assert;
 
 const CreateStringToTest = (str, expected) => ({str, expected});
+
 const StringsToTest = [
     CreateStringToTest("", true),
     CreateStringToTest("abc", true),
@@ -18,11 +19,13 @@ const StringsToTest = [
 ];
 
 StringsToTest.forEach((stringToTest) => {
-    it(`naive unique chars test - ${stringToTest.str}`,  () => {
-        assert.equal(stringToTest.expected, HasUniqueCharsNaive(stringToTest.str));
-    });
-    it(`no additional space unique chars test - ${stringToTest.str}`,  () => {
-        assert.equal(stringToTest.expected, HasUniqueCharsNoAdditionalSpace(stringToTest.str));
+    describe(`unique chars test - ${stringToTest.str}`, () => {
+        it(`naive unique chars test - ${stringToTest.str}`,  () => {
+            assert.equal(stringToTest.expected, HasUniqueCharsNaive(stringToTest.str));
+        });
+        it(`no additional space unique chars test - ${stringToTest.str}`,  () => {
+            assert.equal(stringToTest.expected, HasUniqueCharsNoAdditionalSpace(stringToTest.str));
+        });
     });
 });
 
