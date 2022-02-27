@@ -15,7 +15,9 @@ const StringsToTest = [
     CreateStringToTest("Acdertfa", true),
     CreateStringToTest("123aCDASc1", false),
     CreateStringToTest("acdertf@#1", true),
-    CreateStringToTest("@acdertfc@#1", false)
+    CreateStringToTest("@acdertfc@#1", false),
+    CreateStringToTest("@acder _", true),
+    CreateStringToTest("@acder _ ", false)
 ];
 
 StringsToTest.forEach((stringToTest) => {

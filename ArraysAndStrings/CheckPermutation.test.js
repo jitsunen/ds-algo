@@ -24,6 +24,7 @@ const CreateStringToTest = (baseStr, testStr, expected) => ({baseStr, testStr, e
 const StringsToTest = [
     CreateStringToTest("", "", true),
     CreateStringToTest("abc", "cab", true),
+    CreateStringToTest(" abc ", "cab  ", true),
     CreateStringToTest("ccc", "acc", false),
     CreateStringToTest("addc", "aaaddc", false),
     CreateStringToTest("Acdertfa", "Acdertfa", true),
